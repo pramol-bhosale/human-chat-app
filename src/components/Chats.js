@@ -8,8 +8,9 @@ import {v4 as uuid} from "uuid"
 import {getDownloadURL, ref, uploadBytesResumable} from 'firebase/storage'
 
 import { AuthContext } from '../context/AuthContext';
-import Message from './Message';
+
 function Chats() {
+  
    const {data} =useContext(ChatContext);
    const [text, setText]=useState()
    const [img, setImg] = useState(null)
@@ -70,7 +71,7 @@ function Chats() {
 
    useEffect(() => {
       const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
-        doc.exists() && setMessages(doc.data().messages) && console.log(typeof doc.data().messages);
+        doc.exists() && setMessages(doc.data().messages);
         
       });
   
@@ -78,14 +79,12 @@ function Chats() {
         unSub();
       };
     }, [data.chatId]);
-    console.log(messages)
-    messages.map((c)=>(
-      console.log(c.senderId)
-    ))
+  
   return (
     <div className='row gx-0 '>
+      
         {/* navigation bar of chat box with user profile and name the one whom with you are chatting */}
-         <div className='row gx-0 col-12 chat-nav p-3 align-items-center '>
+    { data.chatId !=="null" && <><div className='row gx-0 col-12 chat-nav p-3 align-items-center '>
            <div className='col-3 text-center'>
             <img src="https://image.shutterstock.com/image-photo/young-handsome-man-beard-wearing-260nw-1768126784.jpg" alt="" />
            </div>
@@ -96,7 +95,7 @@ function Chats() {
          <div className='chat-box'>
          {messages.map((c) => (
          <>
-         {c.senderId == currentUser.uid ? <SendMsg  text={c.text} img={c.img}/>: <ReceivedMsg text={c.text} img={c.img}/>}
+         {c.senderId === currentUser.uid ? <SendMsg  text={c.text} img={c.img}/>: <ReceivedMsg text={c.text} img={c.img}/>}
          </>   
        ))}
         
@@ -122,7 +121,13 @@ function Chats() {
          </div>
         </div>
         
-         </div>
+         </div></>}
+        {
+          data.chatId ==="null" &&
+          <div className='m-5' style={{color:"grey",fontSize:"20px"}}>
+            Tap to start conversation.
+          </div> 
+        }
 
     </div>
   )

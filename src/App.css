@@ -128,3 +128,6 @@ font-size: 16px;
   padding: 5px 13px;
   border-radius: 2px;
   }
+  .prof_upload{
+    cursor: pointer;
+  }
