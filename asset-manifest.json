@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/human-chat-app/static/css/main.f18ffcc5.css",
+    "main.js": "/human-chat-app/static/js/main.369f0d11.js",
+    "index.html": "/human-chat-app/index.html",
+    "main.f18ffcc5.css.map": "/human-chat-app/static/css/main.f18ffcc5.css.map",
+    "main.369f0d11.js.map": "/human-chat-app/static/js/main.369f0d11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f18ffcc5.css",
+    "static/js/main.369f0d11.js"
+  ]
+}
