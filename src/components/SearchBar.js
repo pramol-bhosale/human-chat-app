@@ -84,7 +84,7 @@ import { AuthContext } from '../context/AuthContext';
        {err && <span>User not found</span>}
        {user &&  <div className='row gx-0 align-items-center msgList mt-3' onClick={handleSelect}>
         <div className='col-2 text-center'>
-          <img src="https://static-cse.canva.com/_next/static/assets/100-brilliant-color-combinations_w600xh337_8d6833889d691c050e76a344befd0a787278d466a1ddeb150f8d6dd8b0227d44.avif" alt="" />
+          <img src={ `https://avatars.dicebear.com/api/avataaars/${user.displayName}.svg`} alt="" />
         </div>
         <div className='col-10'>
           <div className='col-12'>
