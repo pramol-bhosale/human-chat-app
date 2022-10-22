@@ -21,7 +21,7 @@ function App() {
     return children;
   }
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/human-chat-app'>
     <Routes>
        <Route path='/'>
           <Route index element={<ProtectedRoute>
