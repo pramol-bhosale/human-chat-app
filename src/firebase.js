@@ -5,12 +5,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC7_nibqshi5GiyASjYR2nb0dMirHlrXfI",
-  authDomain: "human-chat-p.firebaseapp.com",
-  projectId: "human-chat-p",
-  storageBucket: "human-chat-p.appspot.com",
-  messagingSenderId: "1035107817571",
-  appId: "1:1035107817571:web:bbcb1784afbfd6ebafc056"
+  apiKey: "your api key",
+  authDomain: "your authdomain",
+  projectId: "project id",
+  storageBucket: "your storage bucket ",
+  messagingSenderId: "your message id",
+  appId: "app id"
 };
 
 // Initialize Firebase
