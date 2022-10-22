@@ -1,6 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
+import { ChatContext } from '../context/ChatContext';
 
 function ReceivedMsg(props) {
+  const {data} =useContext(ChatContext)
   const ref = useRef();
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -13,7 +15,7 @@ function ReceivedMsg(props) {
       
           <div className='col-6 row gx-0 mt-4 mb-4'>
              <div className='col-3 text-center'>
-                <img src="https://image.shutterstock.com/image-photo/young-handsome-man-beard-wearing-260nw-1768126784.jpg" alt="" className='chat-img'/> 
+                <img src={ `https://avatars.dicebear.com/api/avataaars/${data.user.displayName}.svg`} alt="" className='chat-img'/> 
              </div>
              <div className='col-9 r-chat-text p-2'>
              {props ? props.text : null}

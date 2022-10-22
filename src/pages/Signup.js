@@ -3,6 +3,7 @@ import {createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import {auth, db} from '../firebase'
 import {doc, setDoc} from 'firebase/firestore'
 import {Link, useNavigate} from 'react-router-dom'
+import Axios from 'axios';
 function Signup() {
 const [error, setError] =useState(false)
 const [user, setUser] = useState({})
@@ -33,13 +34,16 @@ const handleSubmit = async (event)=>{
 try{
 const response = await  createUserWithEmailAndPassword(auth, email, password);
 setUser(response.user)
+
 await updateProfile(auth.currentUser, {
-    displayName: displayName
+    displayName: displayName,
+    photoURL:`https://avatars.dicebear.com/api/avataaars/${displayName}.svg`
    }) 
 await setDoc(doc(db, 'users', response.user.uid), {
     'uid':response.user.uid,
     'displayName':displayName,
-    'email': response.user.email
+    'email': response.user.email,
+    photoURL:`https://avatars.dicebear.com/api/avataaars/${displayName}.svg`
   })
   await setDoc(doc(db, 'userChat', response.user.uid), {})
   navigate("/");

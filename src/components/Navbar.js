@@ -34,10 +34,7 @@ function Navbar() {
             Human Chat
         </div>
         <div className='col-8 text-end'>
-          <label htmlFor="prof_pic" className='prof_upload'>
-            <img src={imageUrl} alt="" />
-            </label>
-            <input type="file" id="prof_pic" className='d-none' onChange={(e)=>{setProfile(e.target.files[0]);console.log(e.target.files[0].name);  update_pic()}}/>
+           <img src={currentUser.photoURL} alt="" /> 
             <button type="submit" className='rounded-1 ms-3' onClick={()=> signOut(auth)}>Logout</button>
         </div>
       </div>

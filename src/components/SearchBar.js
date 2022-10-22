@@ -54,7 +54,8 @@ import { AuthContext } from '../context/AuthContext';
         await updateDoc(doc(db, "userChat",currentUser.uid),{
           [combinedId + ".userInfo"]:{
             uid:user.uid,
-            displayName:user.displayName
+            displayName:user.displayName,
+            photoURL:user.photoURL
           },
           [combinedId + ".date"]: serverTimestamp()
 
@@ -63,7 +64,8 @@ import { AuthContext } from '../context/AuthContext';
        await updateDoc(doc(db, "userChat",user.uid),{
           [combinedId + ".userInfo"]:{
             uid:currentUser.uid,
-            displayName:currentUser.displayName
+            displayName:currentUser.displayName,
+            photoURL:currentUser.photoURL
           },
           [combinedId + ".date"]: serverTimestamp()
 

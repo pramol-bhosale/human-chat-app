@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
+import { AuthContext } from '../context/AuthContext';
 
 function SendMsg(props) {
   const ref = useRef();
+  const {currentUser} =useContext(AuthContext)
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [props.text]);
@@ -21,7 +23,7 @@ function SendMsg(props) {
              </div>
              </div>
              <div className='col-3 text-center'>
-                <img src="https://image.shutterstock.com/image-photo/young-handsome-man-beard-wearing-260nw-1768126784.jpg" alt="" className='chat-img'/> 
+                <img src={`https://avatars.dicebear.com/api/avataaars/${currentUser.displayName}.svg`} alt="" className='chat-img'/> 
              </div>
           </div>
 

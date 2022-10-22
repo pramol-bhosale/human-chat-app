@@ -86,7 +86,7 @@ function Chats() {
         {/* navigation bar of chat box with user profile and name the one whom with you are chatting */}
     { data.chatId !=="null" && <><div className='row gx-0 col-12 chat-nav p-3 align-items-center '>
            <div className='col-3 text-center'>
-            <img src="https://image.shutterstock.com/image-photo/young-handsome-man-beard-wearing-260nw-1768126784.jpg" alt="" />
+            <img src={`https://avatars.dicebear.com/api/avataaars/${data.user.displayName}.svg`} alt="" />
            </div>
            <div className='col-9'>
             <span>{data.user.displayName}</span>
@@ -95,7 +95,7 @@ function Chats() {
          <div className='chat-box'>
          {messages.map((c) => (
          <>
-         {c.senderId === currentUser.uid ? <SendMsg  text={c.text} img={c.img}/>: <ReceivedMsg text={c.text} img={c.img}/>}
+         {c.senderId === currentUser.uid ? <SendMsg  text={c.text} img={c.img} />: <ReceivedMsg text={c.text} img={c.img}/>}
          </>   
        ))}
         

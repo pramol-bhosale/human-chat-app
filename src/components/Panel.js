@@ -29,7 +29,7 @@ const handleSelect=(u)=>{
       {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat)=>(
         <div className='row gx-0 align-items-center msgList mt-3' key={chat[0]} onClick={()=>{handleSelect(chat[1].userInfo)}}>
         <div className='col-2 text-center'>
-          <img src="https://static-cse.canva.com/_next/static/assets/100-brilliant-color-combinations_w600xh337_8d6833889d691c050e76a344befd0a787278d466a1ddeb150f8d6dd8b0227d44.avif" alt="" />
+          <img src={`https://avatars.dicebear.com/api/avataaars/${chat[1].userInfo.displayName}.svg`} alt="" />
         </div>
         <div className='col-10'>
           <div className='col-12'>
