@@ -14,6 +14,9 @@ function Home() {
           <Chats />
         </div>
       </div>
+      <div className='col-12 text-center end-caption'>
+        Human Chat made by pramol-bhosale &#11088;
+      </div>
 
     </div>
   )

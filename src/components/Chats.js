@@ -126,6 +126,7 @@ function Chats() {
           data.chatId ==="null" &&
           <div className='m-5' style={{color:"grey",fontSize:"20px"}}>
             Tap to start conversation.
+            
           </div> 
         }
 
